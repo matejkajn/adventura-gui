@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="background" stylesheets="style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.matejka.MainController">
+    <top>
+        <VBox>
+            <MenuBar BorderPane.alignment="CENTER">
+                <menus>
+                    <Menu mnemonicParsing="false" text="Menu">
+                        <items>
+                            <MenuItem fx:id="newGame" mnemonicParsing="false" text="Nová hra" />
+                            <MenuItem fx:id="endButton" mnemonicParsing="false" text="Konec" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Nápověda">
+                        <items>
+                            <MenuItem fx:id="helpButton" mnemonicParsing="false" text="Nápověda" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <VBox fx:id="headBox" styleClass="infoBoxes">
+                <Label fx:id="areaName" styleClass="infoLabels" />
+                <Label fx:id="areaDescription" styleClass="infoLabels" />
+            </VBox>
+        </VBox>
+    </top>
+    <bottom>
+      <VBox fx:id="textAreas" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <TextField fx:id="textInput" onKeyPressed="#onInputKeyPressed" />
+            <TextArea fx:id="textOutput" editable="false" prefHeight="200.0" prefWidth="200.0" />
+      </VBox>
+   </bottom>
+    <left>
+        <HBox fx:id="leftBox">
+          <VBox prefHeight="200.0" prefWidth="200" styleClass="infoBoxes" BorderPane.alignment="CENTER">
+                <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+                      <Label styleClass="infoLabels" text="Inventář" />
+                      <VBox fx:id="inventory" prefHeight="200.0" prefWidth="200.0" />
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+                      <Label styleClass="infoLabels" text="Vybavení" />
+                      <VBox fx:id="equipment" prefHeight="200.0" prefWidth="200.0" />
+                </VBox>
+          </VBox>
+
+            <VBox prefHeight="200.0" prefWidth="200" styleClass="infoBoxes" BorderPane.alignment="CENTER">
+                <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+                    <Label styleClass="infoLabels" text="Obchodování" />
+                    <VBox fx:id="tradeButtons" prefHeight="200.0" prefWidth="200.0" />
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+                    <Label styleClass="infoLabels" text="Obranné staty" />
+                    <VBox fx:id="playerStats" prefHeight="200.0" prefWidth="200.0" />
+                </VBox>
+            </VBox>
+        </HBox>
+    </left>
+   <right>
+      <VBox fx:id="rightBox" prefHeight="200.0" prefWidth="200.0" styleClass="infoBoxes" BorderPane.alignment="CENTER">
+          <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+              <Label styleClass="infoLabels" text="Východy" />
+              <VBox fx:id="exits" prefHeight="200.0" prefWidth="200.0" />
+          </VBox>
+          <VBox prefHeight="80.0" prefWidth="200.0" styleClass="innerBoxes">
+              <Label styleClass="infoLabels" text="Postavy" />
+              <VBox fx:id="persons" prefHeight="80.0" prefWidth="200.0" />
+          </VBox>
+          <VBox prefHeight="200.0" prefWidth="200.0" styleClass="innerBoxes">
+              <Label styleClass="infoLabels" text="Předměty" />
+              <VBox fx:id="items" prefHeight="200.0" prefWidth="200.0" />
+          </VBox>
+      </VBox>
+   </right>
+   <center>
+       <Label fx:id="endInfo" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
